@@ -6,11 +6,15 @@
   <title>Button Pressed</title>
 </head>
 <body>
-  <!-- HTML goes here -->
-
+  <button id="leftButton">Click Me!</button>
   <script>
-    // JavaScript goes here
-
+    let x = event.clientX;
+    let y = event.clientY;
+    let coord = "X: " + x + ", Y: " + y;
+    const myButton = document.querySelector('#leftButton')
+    myButton.addEventListener('click', function() {
+      console.log(coord)
+    })
   </script>
 </body>
 </html>

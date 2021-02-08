@@ -1,16 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scroll Events</title>
 </head>
+
 <body>
-  <!-- HTML goes here -->
-
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
   <script>
-    // JavaScript goes here
+    function debounce(func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this, args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+    let efficientResizeAlert = debounce(function() {
+      console.log("You've resized the window!")
+    }, 250)
 
+    window.addEventListener('resize', efficientResizeAlert)
   </script>
 </body>
+
 </html>
